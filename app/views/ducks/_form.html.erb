@@ -1,0 +1,23 @@
+<h2>Duck Form</h2>
+<br>
+
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @duck do |f| %>
+
+<%= f.label "Duck Name" %>
+<%= f.text_field :name %>
+<br>
+<%= f.label "Duck Description" %>
+<%= f.text_area :description %>
+<br>
+<%= f.collection_select :student_id, Student.all, :id, :name %>
+<br>
+<%= f.submit %>
+<% end %>

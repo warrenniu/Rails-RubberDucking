@@ -1,0 +1,15 @@
+<h2>Student Page</h2>
+
+<ul>
+<h3>Student Name </h3>
+<br>
+<li><%= @student.name  %></li>
+
+<h3>Student Mod</h3>
+<li><%= @student.mod %></li>
+<br>
+<h3>Ducks Owned</h3>
+<% @student.ducks.each do |duck| %>
+<li><%= duck.name %></li>
+</ul>
+<% end %>
